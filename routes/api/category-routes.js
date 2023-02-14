@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const categoryData = await Category.findAll()
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err, { message: 'Server Error: Please try again later.' });
+    res.status(500).json( { err, message: 'Server Error: Please try again later.' });
   }
   // find all categories
   // be sure to include its associated Products
@@ -23,7 +23,7 @@ router.get('/:category_id', async(req, res) => {
     }
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err, { message: 'Server Error: Please try again later.' });
+    res.status(500).json( { err, message: 'Server Error: Please try again later.' });
   }
   // find one category by its `id` value
   // be sure to include its associated Products
@@ -35,7 +35,7 @@ router.post('/', async(req, res) => {
     const categoryData = await Category.create(req.body);
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err, { message: 'Server Error: Please try again later.' });
+    res.status(500).json( { err, message: 'Server Error: Please try again later.' });
   }
 });
 
@@ -53,7 +53,7 @@ router.put('/:category_id', async(req, res) => {
     }
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err, { message: 'Server Error: Please try again later.' });
+    res.status(500).json( { err, message: 'Server Error: Please try again later.' });
   }
 });
 
@@ -66,7 +66,7 @@ router.delete('/:category_id', async(req, res) => {
     });
     res.status(200).json(categoryData);
   } catch (err) {
-    res.status(500).json(err, { message: 'Server Error: Please try again later.' });
+    res.status(500).json( { err, message: 'Server Error: Please try again later.' });
   }
   // delete a category by its `id` value
 });
