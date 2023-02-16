@@ -109,7 +109,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:product_id', async(req, res) => {
   // delete one product by its `id` value
   try {
-    const deletedProduct = Product.delete({where: req.params.product_id})
+    const deletedProduct = Product.destroy({where: {id: req.params.product_id}});
     res.status(200).json(deletedProduct);
   } catch (err) {
     res.status(500).json( { err, message: 'Server Error: Please try again later.' });
